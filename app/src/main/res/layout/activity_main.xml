@@ -6,13 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/iTapLogoHome"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/descriptionTapLogoHome"
+        app:layout_constraintBottom_toTopOf="@+id/iTapPlaySolo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ITapLogo" />
 
+    <ImageView
+        android:id="@+id/iTapPlaySolo"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/descriptionPlaySoloButton"
+        app:layout_constraintBottom_toTopOf="@+id/iTapPlay2Gether"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iTapLogoHome"
+        app:srcCompat="@drawable/ITapPlaySolo" />
+
+    <ImageView
+        android:id="@+id/iTapPlay2Gether"
+        android:layout_width="392dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/descriptionPlayTogetherButton"
+        app:layout_constraintBottom_toTopOf="@+id/iTapSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iTapPlaySolo"
+        app:srcCompat="@drawable/ITapPlay2Gether" />
+
+    <ImageView
+        android:id="@+id/iTapSettings"
+        android:layout_width="367dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/descriptionSettingsbutton"
+        app:layout_constraintBottom_toTopOf="@+id/iTapHighscores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iTapPlay2Gether"
+        app:srcCompat="@drawable/ITapSettings" />
+
+    <ImageView
+        android:id="@+id/iTapHighscores"
+        android:layout_width="211dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/descriptionHighscoresButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iTapSettings"
+        app:srcCompat="@drawable/ITapHighscores" />
 </android.support.constraint.ConstraintLayout>

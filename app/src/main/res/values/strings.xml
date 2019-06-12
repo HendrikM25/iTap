@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Itap</string>
+    <string name="description">shows iTap logo</string>
+    <string name="descriptionTapLogoHome">show itap logo</string>
+    <string name="descriptionPlaySoloButton">show playSolo button asset</string>
+    <string name="descriptionPlayTogetherButton">show play together button asset</string>
+    <string name="descriptionSettingsbutton">shows settings button asset</string>
+    <string name="descriptionHighscoresButton">show highscore button asset</string>
 </resources>
