@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ITapLogo" />
+        app:srcCompat="@drawable/itap_logo" />
 
     <ImageView
         android:id="@+id/iTapPlaySolo"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iTapLogoHome"
-        app:srcCompat="@drawable/ITapPlaySolo" />
+        app:srcCompat="@drawable/itap_playsolo" />
 
     <ImageView
         android:id="@+id/iTapPlay2Gether"
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iTapPlaySolo"
-        app:srcCompat="@drawable/ITapPlay2Gether" />
+        app:srcCompat="@drawable/itap_play2gether" />
 
     <ImageView
         android:id="@+id/iTapSettings"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iTapPlay2Gether"
-        app:srcCompat="@drawable/ITapSettings" />
+        app:srcCompat="@drawable/itap_settings" />
 
     <ImageView
         android:id="@+id/iTapHighscores"
@@ -75,5 +75,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iTapSettings"
-        app:srcCompat="@drawable/ITapHighscores" />
+        app:srcCompat="@drawable/itap_highscores" />
 </android.support.constraint.ConstraintLayout>
