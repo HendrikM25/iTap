@@ -4,6 +4,24 @@
     <string name="descriptionTapLogoHome">show itap logo</string>
     <string name="descriptionPlaySoloButton">show playSolo button asset</string>
     <string name="descriptionPlayTogetherButton">show play together button asset</string>
-    <string name="descriptionSettingsbutton">shows settings button asset</string>
+    <string name="descriptionSettingsButton">shows settings button asset</string>
     <string name="descriptionHighscoresButton">show highscore button asset</string>
+    <string name="highscoresLogoDescription">show iTap highscore logo asset</string>
+    <string name="rankImageDescription">show rank image asset</string>
+    <string name="scoreImageDescription">show score image asset</string>
+    <string name="hintName">Name</string>
+    <string name="emptyHighscore">--</string>
+    <string name="rank1">1</string>
+    <string name="rank2">2</string>
+    <string name="rank3">3</string>
+    <string name="rank4">4</string>
+    <string name="rank5">5</string>
+    <string name="rank6">6</string>
+    <string name="rank7">7</string>
+    <string name="rank8">8</string>
+    <string name="rank9">9</string>
+    <string name="rank10">10</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

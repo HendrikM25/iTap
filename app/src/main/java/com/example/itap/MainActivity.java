@@ -1,14 +1,19 @@
 package com.example.itap;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView playSolo, play2Gether, settings, highscores;
+    ArrayList<ScoreEntry> highscoreList = new ArrayList<ScoreEntry>(10);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSoloGameScreen() {
         Intent intentSolo = new Intent(this, PlaySoloActivity.class);
-        startActivity(intentSolo);
+        intentSolo.putExtra("highscores", highscoreList);
+        startActivityForResult(intentSolo, 1);
     }
 
     private void showMultiplayerGameScreen() {
@@ -75,6 +81,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void showHighscoresScreen() {
         Intent intentHighscores = new Intent(this, HighscoresActivity.class);
+        intentHighscores.putExtra("highscores", highscoreList);
         startActivity(intentHighscores);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK) {
+                //what happens with result (data)?
+                highscoreList = (ArrayList) data.getSerializableExtra("newHighscores");
+
+            }
+            if(resultCode == Activity.RESULT_CANCELED) {
+                //when there is no result
+            }
+        }
     }
 }
