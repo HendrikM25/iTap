@@ -177,10 +177,10 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreD
 
     //if we got a new highscore
     private void endActivity(ArrayList highscoreList) {
-        Intent backIntent = new Intent();
-        backIntent.putExtra("newHighscores", highscoreList);
+        Intent backIntent = new Intent(this, MainActivity.class);
+        backIntent.putStringArrayListExtra("newHighscores", highscoreList);
         setResult(Activity.RESULT_OK, backIntent);
-        finish();
+        startActivity(backIntent);
     }
 
     //if we don't have a new highscore

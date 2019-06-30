@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 1) {
             if(resultCode == Activity.RESULT_OK) {
                 //what happens with result (data)?
-                highscoreList = (ArrayList) data.getSerializableExtra("newHighscores");
+                highscoreList = (ArrayList<ScoreEntry>) data.getExtras().getSerializable("newHighscores");
 
             }
             if(resultCode == Activity.RESULT_CANCELED) {
