@@ -3,11 +3,12 @@ package com.example.itap;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.CountDownTimer;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,7 +19,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+
+
 public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreDialogFragment.OnFragmentInteractionListener {
+
+    SharedPreferences mPreferences;
+    SharedPreferencesManager spManager;
 
     ImageView tapTarget;
     TextView score, time;
@@ -26,19 +32,28 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreD
     int timeLeft;
     boolean gameStarted, timerIsRunning, newHighscoreAchieved;
     CountDownTimer timer;
-    ArrayList<ScoreEntry> highscores = new ArrayList<>(10);
+    //ArrayList<ScoreEntry> highscores = new ArrayList<>(10);
+    //instead we are loading the current highscoreList from the sharedPreferences in our onCreate() method
+    ArrayList<ScoreEntry> highscores;
     private NewHighscoreDialogFragment.OnFragmentInteractionListener fragmentListener;
-    String playerNameNewHighscore = "test";
+    String playerNameNewHighscore = "unknown";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_solo);
 
+        //initialize sharedPreferenceManager
+        mPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        spManager = new SharedPreferencesManager(mPreferences);
+
         //initialize elements
         gameStarted = false;
 
-        highscores = (ArrayList) getIntent().getSerializableExtra("highscores");
+        //highscores = (ArrayList) getIntent().getSerializableExtra("highscores");
+        //load highscoreList
+        highscores = spManager.loadHighscoreListFromSharedPreferences();
+
 
         tapTarget = findViewById(R.id.tapTarget);
         tapTarget.setOnClickListener(tapTargetListener);
@@ -178,9 +193,11 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreD
     //if we got a new highscore
     private void endActivity(ArrayList highscoreList) {
         Intent backIntent = new Intent(this, MainActivity.class);
-        backIntent.putStringArrayListExtra("newHighscores", highscoreList);
+        //backIntent.putStringArrayListExtra("newHighscores", highscoreList);
+        //instead we save the new highscoreList to SharedPreferences
+        spManager.saveHighscoreListToSharedPreferences(highscoreList);
         setResult(Activity.RESULT_OK, backIntent);
-        startActivity(backIntent);
+        finish();
     }
 
     //if we don't have a new highscore

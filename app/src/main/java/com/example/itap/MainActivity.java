@@ -1,24 +1,41 @@
 package com.example.itap;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+
 import java.util.ArrayList;
-import java.util.HashMap;
+
+/*
+    TODO: create SharedPreferences Manager
+ */
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView playSolo, play2Gether, settings, highscores;
-    ArrayList<ScoreEntry> highscoreList = new ArrayList<ScoreEntry>(10);
+    //ArrayList<ScoreEntry> highscoreList = new ArrayList<>(10);
+    //instead we are loading the current highscoreList from the sharedPreferences in our onCreate() method
+    ArrayList<ScoreEntry> highscoreList;
+    SharedPreferencesManager spManager;
+    SharedPreferences mPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //initialize preferenceManager
+        mPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        spManager = new SharedPreferencesManager(mPreferences);
+
+        //load highscoreList
+        highscoreList = spManager.loadHighscoreListFromSharedPreferences();
 
         //initialize elements
         playSolo = findViewById(R.id.playSolo);
@@ -65,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSoloGameScreen() {
         Intent intentSolo = new Intent(this, PlaySoloActivity.class);
-        intentSolo.putExtra("highscores", highscoreList);
+        //intentSolo.putExtra("highscores", highscoreList);
+        //instead we save the current highscores to the sharedPreferences with spManager
+        spManager.saveHighscoreListToSharedPreferences(highscoreList);
         startActivityForResult(intentSolo, 1);
     }
 
@@ -81,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void showHighscoresScreen() {
         Intent intentHighscores = new Intent(this, HighscoresActivity.class);
-        intentHighscores.putExtra("highscores", highscoreList);
+        //intentHighscores.putExtra("highscores", highscoreList);
+        //instead we are saving the current list to the shared preferences of our app with spManager
+        spManager.saveHighscoreListToSharedPreferences(highscoreList);
         startActivity(intentHighscores);
     }
 
@@ -90,8 +111,9 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 1) {
             if(resultCode == Activity.RESULT_OK) {
                 //what happens with result (data)?
-                highscoreList = (ArrayList<ScoreEntry>) data.getExtras().getSerializable("newHighscores");
-
+                //highscoreList = (ArrayList<ScoreEntry>) data.getExtras().getSerializable("newHighscores");
+                //instead we load the new highscoreList from the sharedPreferences with spManager
+                spManager.loadHighscoreListFromSharedPreferences();
             }
             if(resultCode == Activity.RESULT_CANCELED) {
                 //when there is no result
