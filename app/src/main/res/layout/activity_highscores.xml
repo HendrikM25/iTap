@@ -4,64 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     tools:context=".HighscoresActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iTapHighscoresLogo"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="65dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="65dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        android:contentDescription="@string/highscoresLogoDescription"
+        app:layout_constraintBottom_toTopOf="@+id/rankImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/itap_highscores_logo" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/rankImage"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="65dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        android:contentDescription="@string/rankImageDescription"
+        app:layout_constraintEnd_toStartOf="@+id/scoreImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/iTapHighscoresLogo"
         app:srcCompat="@drawable/highscores_rank" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/scoreImage"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="65dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        android:contentDescription="@string/scoreImageDescription"
+        app:layout_constraintBottom_toBottomOf="@+id/rankImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/rankImage"
+        app:layout_constraintTop_toTopOf="@+id/rankImage"
         app:srcCompat="@drawable/highscores_score" />
 
     <TextView
         android:id="@+id/rank1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank1"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/rank2"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintStart_toStartOf="@+id/rankImage"
+        app:layout_constraintTop_toBottomOf="@+id/rankImage" />
 
     <TextView
         android:id="@+id/rank2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank2"
         app:layout_constraintBottom_toTopOf="@+id/rank3"
         app:layout_constraintStart_toStartOf="@+id/rank1"
         app:layout_constraintTop_toBottomOf="@+id/rank1" />
@@ -72,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank3"
         app:layout_constraintBottom_toTopOf="@+id/rank4"
         app:layout_constraintStart_toStartOf="@+id/rank2"
         app:layout_constraintTop_toBottomOf="@+id/rank2" />
@@ -83,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank4"
         app:layout_constraintBottom_toTopOf="@+id/rank5"
         app:layout_constraintStart_toStartOf="@+id/rank3"
         app:layout_constraintTop_toBottomOf="@+id/rank3" />
@@ -94,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank5"
         app:layout_constraintBottom_toTopOf="@+id/rank6"
         app:layout_constraintStart_toStartOf="@+id/rank4"
         app:layout_constraintTop_toBottomOf="@+id/rank4" />
@@ -105,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank6"
         app:layout_constraintBottom_toTopOf="@+id/rank7"
         app:layout_constraintStart_toStartOf="@+id/rank5"
         app:layout_constraintTop_toBottomOf="@+id/rank5" />
@@ -116,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank7"
         app:layout_constraintBottom_toTopOf="@+id/rank8"
         app:layout_constraintStart_toStartOf="@+id/rank6"
         app:layout_constraintTop_toBottomOf="@+id/rank6" />
@@ -127,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank8"
         app:layout_constraintBottom_toTopOf="@+id/rank9"
         app:layout_constraintStart_toStartOf="@+id/rank7"
         app:layout_constraintTop_toBottomOf="@+id/rank7" />
@@ -138,7 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank9"
         app:layout_constraintBottom_toTopOf="@+id/rank10"
         app:layout_constraintStart_toStartOf="@+id/rank8"
         app:layout_constraintTop_toBottomOf="@+id/rank8" />
@@ -149,208 +154,238 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/rank10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/rank9"
         app:layout_constraintTop_toBottomOf="@+id/rank9" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank1Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView21"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/textView21" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank1Name"
+        app:layout_constraintEnd_toEndOf="@+id/scoreImage"
+        app:layout_constraintStart_toStartOf="@+id/scoreImage"
+        app:layout_constraintTop_toTopOf="@+id/rank1Name" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank2Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="@+id/textView22" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank2Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank1Score"
+        app:layout_constraintStart_toStartOf="@+id/rank1Score"
+        app:layout_constraintTop_toTopOf="@+id/rank2Name" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank3Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView23"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toTopOf="@+id/textView23" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank3Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank2Score"
+        app:layout_constraintStart_toStartOf="@+id/rank2Score"
+        app:layout_constraintTop_toTopOf="@+id/rank3Name" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank4Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView24"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/textView24" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank4Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank3Score"
+        app:layout_constraintStart_toStartOf="@+id/rank3Score"
+        app:layout_constraintTop_toTopOf="@+id/rank4Name" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank5Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView16"
-        app:layout_constraintEnd_toEndOf="@+id/textView14"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/rank6Score"
+        app:layout_constraintEnd_toEndOf="@+id/rank4Score"
+        app:layout_constraintStart_toStartOf="@+id/rank4Score"
+        app:layout_constraintTop_toBottomOf="@+id/rank4Score" />
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank6Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView26"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toTopOf="@+id/textView26" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank6Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank5Score"
+        app:layout_constraintStart_toStartOf="@+id/rank5Score"
+        app:layout_constraintTop_toTopOf="@+id/rank6Name" />
 
     <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank7Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView27"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toTopOf="@+id/textView27" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank7Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank6Score"
+        app:layout_constraintStart_toStartOf="@+id/rank6Score"
+        app:layout_constraintTop_toTopOf="@+id/rank7Name" />
 
     <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank8Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView28"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="@+id/textView28" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank8Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank7Score"
+        app:layout_constraintStart_toStartOf="@+id/rank7Score"
+        app:layout_constraintTop_toTopOf="@+id/rank8Name" />
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank9Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView29"
-        app:layout_constraintEnd_toEndOf="@+id/textView18"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toTopOf="@+id/textView29" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank9Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank8Score"
+        app:layout_constraintStart_toStartOf="@+id/rank8Score"
+        app:layout_constraintTop_toTopOf="@+id/rank9Name" />
 
     <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank10Score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView30"
-        app:layout_constraintEnd_toEndOf="@+id/textView19"
-        app:layout_constraintStart_toStartOf="@+id/textView19"
-        app:layout_constraintTop_toTopOf="@+id/textView30" />
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rank10Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank9Score"
+        app:layout_constraintStart_toStartOf="@+id/rank9Score"
+        app:layout_constraintTop_toTopOf="@+id/rank10Name" />
 
     <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank1Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank1"
+        app:layout_constraintEnd_toEndOf="@+id/rankImage"
         app:layout_constraintStart_toEndOf="@+id/rank1"
         app:layout_constraintTop_toTopOf="@+id/rank1" />
 
     <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank2Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank2"
+        app:layout_constraintEnd_toEndOf="@+id/rank1Name"
         app:layout_constraintStart_toEndOf="@+id/rank2"
         app:layout_constraintTop_toTopOf="@+id/rank2" />
 
     <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank3Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank3"
+        app:layout_constraintEnd_toEndOf="@+id/rank2Name"
         app:layout_constraintStart_toEndOf="@+id/rank3"
         app:layout_constraintTop_toTopOf="@+id/rank3" />
 
     <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank4Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank4"
+        app:layout_constraintEnd_toEndOf="@+id/rank3Name"
         app:layout_constraintStart_toEndOf="@+id/rank4"
         app:layout_constraintTop_toTopOf="@+id/rank4" />
 
     <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank5Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/rank6Name"
+        app:layout_constraintEnd_toEndOf="@+id/rank4Name"
         app:layout_constraintStart_toEndOf="@+id/rank5"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintTop_toBottomOf="@+id/rank4Name" />
 
     <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank6Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank6"
+        app:layout_constraintEnd_toEndOf="@+id/rank5Name"
         app:layout_constraintStart_toEndOf="@+id/rank6"
         app:layout_constraintTop_toTopOf="@+id/rank6" />
 
     <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank7Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank7"
+        app:layout_constraintEnd_toEndOf="@+id/rank6Name"
         app:layout_constraintStart_toEndOf="@+id/rank7"
         app:layout_constraintTop_toTopOf="@+id/rank7" />
 
     <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank8Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank8"
+        app:layout_constraintEnd_toEndOf="@+id/rank7Name"
         app:layout_constraintStart_toEndOf="@+id/rank8"
         app:layout_constraintTop_toTopOf="@+id/rank8" />
 
     <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank9Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank9"
+        app:layout_constraintEnd_toEndOf="@+id/rank8Name"
         app:layout_constraintStart_toEndOf="@+id/rank9"
         app:layout_constraintTop_toTopOf="@+id/rank9" />
 
     <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
+        android:id="@+id/rank10Name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:text="TextView"
+        android:text="@string/emptyHighscore"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/rank10"
+        app:layout_constraintEnd_toEndOf="@+id/rank9Name"
         app:layout_constraintStart_toEndOf="@+id/rank10"
         app:layout_constraintTop_toTopOf="@+id/rank10" />
 </android.support.constraint.ConstraintLayout>
