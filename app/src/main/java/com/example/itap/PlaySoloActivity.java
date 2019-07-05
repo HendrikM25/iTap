@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.CountDownTimer;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,9 +27,10 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
     TextView score, time;
     int currentScore;
     int timeLeft;
-    boolean gameStarted, newHighscoreAchieved;
+    boolean gameStarted;
     CountDownTimer timer;
     String newHighscorePlayerName = "unknown";
+    NewHighscoreFragment nameDialog;
 
     ArrayList<ScoreEntry> highscores;
     //SaveDataManager saveDataManager = new SaveDataManager();
@@ -44,7 +46,6 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
 
         //initialize elements
         gameStarted = false;
-        newHighscoreAchieved = false;
 
         tapTarget = findViewById(R.id.tapTarget);
         tapTarget.setOnClickListener(tapTargetListener);
@@ -72,7 +73,7 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
         }
     };
 
-    //TODO: implement CountDownTimer
+    //implement CountDownTimer
     private void startTimer(int time, int interval) {
         timer = new CountDownTimer(time, interval) {
 
@@ -145,6 +146,7 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
     //open Dialog Fragment
     public void openPlayerNameDialog() {
         NewHighscoreFragment nameDialog = new NewHighscoreFragment();
+        nameDialog.setCancelable(false);
         nameDialog.show(getSupportFragmentManager(), "nameDialog");
     }
 

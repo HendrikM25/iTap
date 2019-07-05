@@ -64,7 +64,6 @@ public class NewHighscoreFragment extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.fragment_new_highscore, null);
-
         builder.setView(view)
                 .setTitle("New Highscore")
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -85,6 +84,7 @@ public class NewHighscoreFragment extends AppCompatDialogFragment {
 
         return builder.create();
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

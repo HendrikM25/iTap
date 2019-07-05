@@ -6,4 +6,129 @@
     android:layout_height="match_parent"
     tools:context=".Play2GetherActivity">
 
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/descriptionTapLogoHome"
+        app:layout_constraintBottom_toTopOf="@+id/player2Indicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/itap_mainmenu_logo_asset" />
+
+    <ImageView
+        android:id="@+id/scoreImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/scoreImageDescription"
+        app:layout_constraintBottom_toTopOf="@+id/tapTarget"
+        app:layout_constraintEnd_toStartOf="@+id/scoreView"
+        app:layout_constraintStart_toStartOf="@+id/logoImage"
+        app:layout_constraintTop_toBottomOf="@+id/player1Indicator"
+        app:srcCompat="@drawable/itap_score" />
+
+    <ImageView
+        android:id="@+id/tapTarget"
+        android:layout_width="0dp"
+        android:layout_height="281dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/TargetImageDesc"
+        app:layout_constraintBottom_toTopOf="@+id/timeImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreImage"
+        app:srcCompat="@drawable/itap_target_android_prototype" />
+
+    <ImageView
+        android:id="@+id/timeImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/timeImageDescription"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/timeView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tapTarget"
+        app:srcCompat="@drawable/itap_time_left" />
+
+    <ImageView
+        android:id="@+id/player1Indicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/player1ImageDesc"
+        app:layout_constraintBottom_toTopOf="@+id/scoreImage"
+        app:layout_constraintEnd_toStartOf="@+id/player2Indicator"
+        app:layout_constraintStart_toStartOf="@+id/logoImage"
+        app:layout_constraintTop_toBottomOf="@+id/logoImage"
+        app:srcCompat="@drawable/number_one" />
+
+    <ImageView
+        android:id="@+id/player2Indicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/player2ImageDesc"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Indicator"
+        app:layout_constraintStart_toEndOf="@+id/player1Indicator"
+        app:layout_constraintTop_toTopOf="@+id/player1Indicator"
+        app:srcCompat="@drawable/number_two" />
+
+    <TextView
+        android:id="@+id/scoreView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="65dp"
+        android:text="@string/beginningScore"
+        android:textSize="32sp"
+        app:autoSizeMaxTextSize="32sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeStepGranularity="2sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scoreImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scoreImage"
+        app:layout_constraintTop_toTopOf="@+id/scoreImage" />
+
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="65dp"
+        android:textSize="32sp"
+        app:autoSizeMaxTextSize="32sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeStepGranularity="2sp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeImage"
+        app:layout_constraintTop_toTopOf="@+id/timeImage" />
+
+    <Button
+        android:id="@+id/passButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/passButton"
+        app:layout_constraintBottom_toBottomOf="@+id/player2Indicator"
+        app:layout_constraintEnd_toEndOf="@+id/logoImage"
+        app:layout_constraintTop_toTopOf="@+id/player2Indicator" />
 </android.support.constraint.ConstraintLayout>

@@ -24,6 +24,13 @@
     <string name="rank9">9</string>
     <string name="rank10">10</string>
 
+    <string name="passButton">Pass</string>
+    <string name="beginningScore">0</string>
+    <string name="timeImageDescription">show time image</string>
+    <string name="TargetImageDesc">show target image</string>
+    <string name="player1ImageDesc">show player1 indicator image</string>
+    <string name="player2ImageDesc">show player2 indicator image</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
