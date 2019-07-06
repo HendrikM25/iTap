@@ -124,12 +124,15 @@ public class Play2GetherActivity extends AppCompatActivity implements NewHighsco
                     p2Score = currentScore;
                     if(p1Score > p2Score) {
                         Toast.makeText(getApplicationContext(), "Player 1 won!", Toast.LENGTH_LONG).show();
+                        tapTarget.setImageResource(R.drawable.player1_wins);
                     }
                     else if(p2Score > p1Score) {
                         Toast.makeText(getApplicationContext(), "Player 2 won!", Toast.LENGTH_LONG).show();
+                        tapTarget.setImageResource(R.drawable.player2_wins);
                     }
                     else if(p1Score == p2Score) {
                         Toast.makeText(getApplicationContext(), "Draw!", Toast.LENGTH_LONG).show();
+                        tapTarget.setImageResource(R.drawable.draw);
                     }
                 }
 
@@ -165,7 +168,9 @@ public class Play2GetherActivity extends AppCompatActivity implements NewHighsco
 
     @Override
     public void onBackPressed() {
-        timer.cancel();
+        if(gameStarted) {
+            timer.cancel();
+        }
         saveData();
         finish();
     }

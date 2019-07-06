@@ -124,7 +124,9 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
 
     @Override
     public void onBackPressed() {
-        timer.cancel();
+        if(gameStarted) {
+            timer.cancel();
+        }
         //save highscoreList
         //saveDataManager.saveHighscoreMap(highscores);
         saveData();

@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/itap_mainmenu_logo_asset" />
+        app:srcCompat="@drawable/itap_2gether_logo" />
 
     <ImageView
         android:id="@+id/scoreImage"
