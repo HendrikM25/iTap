@@ -31,6 +31,7 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
     CountDownTimer timer;
     String newHighscorePlayerName = "unknown";
     NewHighscoreFragment nameDialog;
+    String targetImage;
 
     ArrayList<ScoreEntry> highscores;
     //SaveDataManager saveDataManager = new SaveDataManager();
@@ -54,6 +55,10 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
 
         time = findViewById(R.id.timeLeft);
         timeLeft = 10;
+
+        //load and set the target image from settings
+        loadSettings();
+        setTargetImage(targetImage);
 
         //reset elements
         setScore(0);
@@ -122,6 +127,27 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
         }
     }
 
+    private void loadSettings() {
+        SharedPreferences sharedPreferences = getSharedPreferences("shared", MODE_PRIVATE);
+        targetImage = sharedPreferences.getString("targetImage", "green");
+    }
+
+    private void setTargetImage(String targetImage) {
+        switch (targetImage) {
+            case "green":
+                tapTarget.setImageResource(R.drawable.itap_target_android_prototype);
+                break;
+            case "blue":
+                tapTarget.setImageResource(R.drawable.tap_target_blue);
+                break;
+            case "purple":
+                tapTarget.setImageResource(R.drawable.tap_target_purple);
+                break;
+            case "orange":
+                tapTarget.setImageResource(R.drawable.tap_target_orange);
+        }
+    }
+
     @Override
     public void onBackPressed() {
         if(gameStarted) {
@@ -159,7 +185,9 @@ public class PlaySoloActivity extends AppCompatActivity implements NewHighscoreF
 
     @Override
     public void createNewHighscore(String name) {
-        newHighscorePlayerName = name;
+        if(!name.isEmpty()) {
+            newHighscorePlayerName = name;
+        }
         highscores.add(new ScoreEntry(newHighscorePlayerName, currentScore));
         Collections.sort(highscores, Comparator.comparing(ScoreEntry::getScore));
         Collections.reverse(highscores);

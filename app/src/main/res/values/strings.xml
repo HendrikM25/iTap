@@ -13,6 +13,12 @@
     <string name="hintNewHighscoreName">Insert your name</string>
     <string name="emptyHighscore">--</string>
 
+    <string name="tapTargetGreenDesc">show green version of tap target in settings</string>
+    <string name="tapTargetOrangeDesc">show orange version of tap target in settings</string>
+    <string name="tapTargetBlueDesc">show blue version of tap target in settings</string>
+    <string name="tapTargetPurpleDesc">show purple version of tap target in settings</string>
+    <string name="settingsLogoDesc">show itap settings logo asset</string>
+
     <string name="rank1">1</string>
     <string name="rank2">2</string>
     <string name="rank3">3</string>

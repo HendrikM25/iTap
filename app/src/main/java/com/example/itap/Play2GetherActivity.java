@@ -37,6 +37,7 @@ public class Play2GetherActivity extends AppCompatActivity implements NewHighsco
 
     ArrayList<ScoreEntry> highscores;
     String newHighscorePlayerName = "unknown";
+    String targetImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,10 @@ public class Play2GetherActivity extends AppCompatActivity implements NewHighsco
         //add onClickListener
         tapTarget.setOnClickListener(tapTargetListener);
         passButton.setOnClickListener(passButtonListener);
+
+        //load and set the target image from settings
+        loadSettings();
+        setTargetImage(targetImage);
     }
 
     private View.OnClickListener tapTargetListener = new View.OnClickListener() {
@@ -206,6 +211,27 @@ public class Play2GetherActivity extends AppCompatActivity implements NewHighsco
 
         if (highscores == null) {
             highscores = new ArrayList<>(10);
+        }
+    }
+
+    private void loadSettings() {
+        SharedPreferences sharedPreferences = getSharedPreferences("shared", MODE_PRIVATE);
+        targetImage = sharedPreferences.getString("targetImage", "green");
+    }
+
+    private void setTargetImage(String targetImage) {
+        switch (targetImage) {
+            case "green":
+                tapTarget.setImageResource(R.drawable.itap_target_android_prototype);
+                break;
+            case "blue":
+                tapTarget.setImageResource(R.drawable.tap_target_blue);
+                break;
+            case "purple":
+                tapTarget.setImageResource(R.drawable.tap_target_purple);
+                break;
+            case "orange":
+                tapTarget.setImageResource(R.drawable.tap_target_orange);
         }
     }
 

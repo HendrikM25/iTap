@@ -6,4 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <ImageView
+        android:id="@+id/targetPurple"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/tapTargetPurpleDesc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/targetOrange"
+        app:layout_constraintStart_toEndOf="@+id/targetBlue"
+        app:srcCompat="@drawable/tap_target_purple" />
+
+    <ImageView
+        android:id="@+id/targetGreen"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="59dp"
+        android:contentDescription="@string/tapTargetGreenDesc"
+        app:layout_constraintBottom_toBottomOf="@+id/targetOrange"
+        app:layout_constraintEnd_toStartOf="@+id/targetOrange"
+        app:layout_constraintStart_toStartOf="@+id/itapSettingsLogo"
+        app:srcCompat="@drawable/itap_target_android_prototype" />
+
+    <ImageView
+        android:id="@+id/targetOrange"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/tapTargetOrangeDesc"
+        app:layout_constraintBottom_toTopOf="@+id/targetPurple"
+        app:layout_constraintEnd_toEndOf="@+id/itapSettingsLogo"
+        app:layout_constraintStart_toEndOf="@+id/targetGreen"
+        app:srcCompat="@drawable/tap_target_orange" />
+
+    <ImageView
+        android:id="@+id/itapSettingsLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/settingsLogoDesc"
+        app:layout_constraintBottom_toTopOf="@+id/targetGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/itap_settings_logo" />
+
+    <ImageView
+        android:id="@+id/targetBlue"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="59dp"
+        android:contentDescription="@string/tapTargetBlueDesc"
+        app:layout_constraintBottom_toBottomOf="@+id/targetPurple"
+        app:layout_constraintEnd_toStartOf="@+id/targetPurple"
+        app:layout_constraintStart_toStartOf="@+id/targetGreen"
+        app:layout_constraintTop_toTopOf="@+id/targetPurple"
+        app:srcCompat="@drawable/tap_target_blue" />
 </android.support.constraint.ConstraintLayout>
